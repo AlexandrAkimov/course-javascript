@@ -1,0 +1,23 @@
+button {
+  background-color: darkcyan;
+  padding: 4px;
+  color: #fff;
+  outline: none;
+  border: none;
+  margin-left: 4px;
+  border-radius: 2px;
+  min-width: 20px;
+  min-height: 20px;
+}
+
+.red {
+  background-color: red;
+}
+
+.green {
+  background-color: forestgreen;
+}
+
+.todo {
+  margin: 15px 0;
+}
