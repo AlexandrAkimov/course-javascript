@@ -6,21 +6,21 @@ export class AppModel {
   async fetchTodos() {
     try {
       return this.todos;
-    } catch (e) {
-      this.todos = [];
-      return this.todos();
+    } catch (error) {
+      return [];
     }
   }
 
   createTodo(title) {
     const todo = {
-      id: String(Date.now()),
+      id: String(Math.random()),
       title,
       done: false,
-      createdAt: new Date(),
+      createdAt: Date.now().toString(),
     };
 
     this.todos.push(todo);
+
     return this.todos;
   }
 

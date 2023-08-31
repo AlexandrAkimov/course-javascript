@@ -1,4 +1,4 @@
-export class AppController {
+export class AppContoller {
   constructor(model) {
     this.model = model;
   }
@@ -11,7 +11,7 @@ export class AppController {
     return this.model.deleteTodo(id);
   }
 
-  handleToggle(id) {
+  handleToggleTodo(id) {
     return this.model.toggleTodo(id);
   }
 }
