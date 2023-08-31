@@ -58,6 +58,7 @@ const methods = {
 http
   .createServer(async (req, res) => {
     const token = req.headers['vk_token'];
+    console.log(req.headers);
     const parsed = new url.URL(req.url, 'http://localhost');
     const vkUser = await getMe(token);
     const body = await readBody(req);
@@ -71,7 +72,9 @@ http
 
     res.end(JSON.stringify(responseData ?? null));
   })
-  .listen('8888');
+  .listen('8888', () => {
+    console.log('Server is running');
+  });
 
 async function readBody(req) {
   if (req.method === 'GET') {

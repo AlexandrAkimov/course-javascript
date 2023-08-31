@@ -24,6 +24,7 @@ export default {
 
     this.friend = friend;
     this.photoId = id;
+
     headerPhotoComp.style.backgroundImage = `url('${friend.photo_50}')`;
     headerNameComp.innerText = `${friend.first_name ?? ''} ${friend.last_name ?? ''}`;
     photoComp.style.backgroundImage = `url('${url}')`;

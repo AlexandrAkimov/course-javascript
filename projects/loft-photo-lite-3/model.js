@@ -153,7 +153,6 @@ export default {
   },
 
   async photoStats(photo) {
-    console.log(photo);
     return this.callServer('photoStats', { photo });
   },
 
