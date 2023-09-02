@@ -27,7 +27,6 @@ const methods = {
     return { likes: photoLikes.size, liked: true };
   },
   photoStats(req, res, url, vkUser) {
-    console.log('SERVER: WORKING');
     const photoId = url.searchParams.get('photo');
     const photoLikes = DB.likes.get(photoId);
     const photoComments = DB.comments.get(photoId);
@@ -40,6 +39,7 @@ const methods = {
   },
   postComment(req, res, url, vkUser, body) {
     const photoId = url.searchParams.get('photo');
+    console.log('photoId', photoId);
     let photoComments = DB.comments.get(photoId);
 
     if (!photoComments) {
@@ -48,6 +48,8 @@ const methods = {
     }
 
     photoComments.unshift({ user: vkUser, text: body.text });
+
+    return DB.comments.get(photoId) ?? [];
   },
   getComments(req, res, url) {
     const photoId = url.searchParams.get('photo');
@@ -58,11 +60,10 @@ const methods = {
 http
   .createServer(async (req, res) => {
     const token = req.headers['vk_token'];
-    console.log(req.headers);
     const parsed = new url.URL(req.url, 'http://localhost');
     const vkUser = await getMe(token);
     const body = await readBody(req);
-    const responseData = await methods[parsed.searchParams.get('method')]?.(
+    const responseData = await methods[parsed?.searchParams?.get('method')]?.(
       req,
       res,
       parsed,
@@ -82,7 +83,7 @@ async function readBody(req) {
   }
 
   return new Promise((resolve) => {
-    let body = '{}';
+    let body = '';
     req
       .on('data', (chunk) => {
         body += chunk;

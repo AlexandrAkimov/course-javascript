@@ -47,7 +47,6 @@ export default {
 
   callApi(method, params) {
     params.v = params.v || '5.131';
-    console.log(params);
     return new Promise((resolve, reject) => {
       VK.api(method, params, (response) => {
         if (response.error) {
@@ -145,6 +144,7 @@ export default {
     }
 
     const response = await fetch(`/loft-photo-lite-5/api/?${query}`, params);
+    console.log(response);
     return response.json();
   },
 

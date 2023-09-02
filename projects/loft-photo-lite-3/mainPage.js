@@ -6,14 +6,8 @@ import pages from './pages';
 export default {
   async getNextPhoto() {
     const { friend, id, url } = await model.getNextPhoto();
-    console.log('AA');
-    try {
-      const photoStats = await model.photoStats(id);
-      console.log('BB', photoStats);
-      this.setFriendAndPhoto(friend, id, url, photoStats);
-    } catch (error) {
-      console.log(error);
-    }
+    const photoStats = await model.photoStats(id);
+    this.setFriendAndPhoto(friend, id, url, photoStats);
   },
 
   setFriendAndPhoto(friend, id, url, stats) {
