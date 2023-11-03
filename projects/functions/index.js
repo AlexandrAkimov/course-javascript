@@ -32,6 +32,7 @@ function returnFirstArgument(x) {
  */
 const sumWithDefaults = (a, b = 100) => {
   return a + b;
+  //апрарарап впррапрапр
 };
 
 /*
