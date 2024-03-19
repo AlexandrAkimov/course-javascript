@@ -144,7 +144,6 @@ export default {
     }
 
     const response = await fetch(`/loft-photo-lite-5/api/?${query}`, params);
-    console.log(response);
     return response.json();
   },
 

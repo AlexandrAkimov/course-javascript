@@ -7,13 +7,13 @@ export default {
     const photoComp = document.querySelector('.component-user-info-photo');
     const nameComp = document.querySelector('.component-user-info-name');
     const photosComp = document.querySelector('.component-user-photos');
+    
     const photos = await model.getPhotos(user.id);
-
     this.user = user;
 
     photoComp.style.backgroundImage = `url('${user.photo_100}')`;
     nameComp.innerText = `${user.first_name ?? ''} ${user.last_name ?? ''}`;
-    photoComp.innerHTML = '';
+    photosComp.innerHTML = '';
 
     for (const photo of photos.items) {
       const size = model.findSize(photo);
