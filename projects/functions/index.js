@@ -13,7 +13,7 @@
  Другими словами: функция должна возвращать в неизменном виде то, что поступает ей на вход
  */
 function returnFirstArgument(x) {
-  return x;
+  
 }
 
 /*
@@ -30,10 +30,7 @@ function returnFirstArgument(x) {
  Пример:
    sumWithDefaults(10) вернет 110
  */
-const sumWithDefaults = (a, b = 100) => {
-  return a + b;
-  //апрарарап впррапрапр
-};
+const sumWithDefaults = (a, b) => {};
 
 /*
  Задание 3:
@@ -44,7 +41,7 @@ const sumWithDefaults = (a, b = 100) => {
    returnFnResult(() => 'привет') вернет 'привет'
  */
 function returnFnResult() {
-  //пвкпвпвпвепвпвапвапkjkjhkjh
+  
 }
 
 /*
