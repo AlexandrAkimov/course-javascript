@@ -30,8 +30,8 @@ function returnFirstArgument(arg) {
  Пример:
    sumWithDefaults(10) вернет 110
  */
-const sumWithDefaults = (a, b = 100) => {
-  return a + b
+const sumWithDefaults = (num1, num2 = 100) => {
+  return num1 + num2
 };
 
 /*
